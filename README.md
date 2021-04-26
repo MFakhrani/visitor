@@ -19,7 +19,7 @@ composer require fakhrani/visitor
  
 Add if your laravel version is < 5.5
 ``` php
-	fakhrani\Visitor\VisitorServiceProvider::class
+	Fakhrani\Visitor\VisitorServiceProvider::class
 ``` 
 
 to the list of service providers in app/config/app.php
