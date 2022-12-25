@@ -3,6 +3,7 @@
     return [
 
         'table' => 'visitor_registry',
+        'model' => \App\Models\Visitor::class,
 
         'ignored' => [
             '192.168.10.0/24',

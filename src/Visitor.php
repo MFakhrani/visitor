@@ -99,7 +99,8 @@ class Visitor implements Countable
 
         $agent = new Agent();
         $is_mobile = ($agent->isMobile() ? 1 : 0);
-        $visit = \App\Visitor::where('ip',$ip)->where('browser',$agent->browser())->where('is_mobile',$is_mobile)->where('created_at','>=',c::today())->first();
+        $model = config('visitor.model');
+        $visit = (new $model)::where('ip',$ip)->where('browser',$agent->browser())->where('is_mobile',$is_mobile)->where('created_at','>=',c::today())->first();
         if ($this->has($ip) && $visit != null) {
             //ip already exist in db.
             $visit->clicks += 1;
